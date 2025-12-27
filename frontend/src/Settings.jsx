@@ -24,7 +24,7 @@ export default function Settings() {
     loadToken();
     loadprofilepic();
     loadTheme();
-  }, []);
+  }, [loadUser, loadToken, loadprofilepic, loadTheme]);
 
   if (!user) {
     return (
@@ -54,6 +54,7 @@ export default function Settings() {
     console.log(data);
     authStore.getState().setUser(data.user);
     localStorage.setItem("profilepic", data.user.profilePic);
+    loadprofilepic();
     toast.success("Profile Pic uploaded!");
   };
   const userUpdate = async () => {
