@@ -24,7 +24,7 @@ export default function Navbar() {
         <a className="text-2xl font-bold" href="/home">
           X BLOGS
         </a>
-        {/* <p>Hi, {user.username}</p> */}
+        {user && <p>Hi {user.username}</p>}
       </div>
 
       {/* --- Navigation Links --- */}
